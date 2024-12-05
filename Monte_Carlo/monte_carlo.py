@@ -102,15 +102,17 @@ class Game:
         input: integer of the amount of games to play
         '''
 
-        self.game_result_df = pd.DataFrame()
+        #save results in list of lists, then turn into dataframe
+        game_results = []
         
         for i in range(games_to_play):
             game_result = []
             for j in range(len(self.die_list)):
                 game_result.append(self.die_list[j].roll_die())
-            self.game_result_df[i] = game_result
-
-        self.game_result_df = self.game_result_df.T
+            
+            game_results.append(game_result)
+        
+        self.game_result_df = pd.DataFrame(game_results)
 
     def show_results(self, form = 'wide'):
         '''
