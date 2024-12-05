@@ -13,6 +13,8 @@ class Die:
         weights (initializes them to 1.0)
 
         input: number of faces of the die. Must be a numpy array
+
+        output: The Die object
         '''
         
         if type(faces) != np.ndarray:
@@ -69,7 +71,7 @@ class Die:
 
         no input
 
-        output: the current state (dataframe) of the due
+        output: the current state (dataframe) of the die
         '''
 
         return(self.die_face_weight)
@@ -86,6 +88,8 @@ class Game:
         init the game
 
         input: list of die objects to play with
+
+        output: The Game object
         '''
         
         self.die_list = die_list
@@ -142,6 +146,8 @@ class Analyzer:
         init the analyzer
     
         input: Game object from the game class
+
+        output: Analyzer object
         '''
         
         if type(game) != Game:
